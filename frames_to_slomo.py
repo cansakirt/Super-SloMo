@@ -28,7 +28,7 @@ parser.add_argument(
 parser.add_argument(
     "--batch_size", type=int, default=1,
     help='Specify batch size for faster conversion. This will depend on your cpu/gpu memory. Default: 1')
-parser.add_argument("--output", type=str, default="output.mkv", help='Specify output file name. Default: output.mp4')
+parser.add_argument("--output", type=str, default="output.mp4", help='Specify output file name. Default: output.mp4')
 args = parser.parse_args()
 
 
@@ -52,8 +52,8 @@ def check():
         error = "Error: --batch_size has to be atleast 1"
     if (args.fps < 1):
         error = "Error: --fps has to be atleast 1"
-    if ".mkv" not in args.output:
-        error = "output needs to have mkv container"
+    if ".mp4" not in args.output:
+        error = "output needs to have mp4 extension"
     return error
 
 
