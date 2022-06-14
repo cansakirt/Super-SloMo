@@ -29,6 +29,7 @@ parser.add_argument(
     "--batch_size", type=int, default=1,
     help='Specify batch size for faster conversion. This will depend on your cpu/gpu memory. Default: 1')
 parser.add_argument("--output", type=str, default="output.mp4", help='Specify output file name. Default: output.mp4')
+parser.add_argument("--output_folder", type=str, default="/content/output/", help='Specify output folder name. Default: /content/output/')
 args = parser.parse_args()
 
 
@@ -201,7 +202,7 @@ def main():
         print(error)
         exit(1)
     '''
-    outputPath = os.path.join("/content/output")
+    outputPath = os.path.join(args.output_folder)
     os.mkdir(outputPath)
     extractionPath = args.frames
 
